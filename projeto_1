@@ -1,0 +1,29 @@
+def calcular_estatisticas_temperaturas():
+    """
+    Calcula a menor, maior temperatura e média de um conjunto indeterminado de temperaturas.
+
+    """
+
+    temperaturas = []
+    while True:
+        try:
+            temperatura = float(input("Digite a temperatura (ou 'sair' para encerrar): "))
+            if temperatura == 'sair':
+                break
+            temperaturas.append(temperatura)
+        except ValueError:
+            print("Entrada inválida. Por favor, digite um número ou 'sair'.")
+
+    if temperaturas:
+        menor_temperatura = min(temperaturas)
+        maior_temperatura = max(temperaturas)
+        media = sum(temperaturas) / len(temperaturas)
+
+        print(f"A menor temperatura foi: {menor_temperatura:.2f}°C")
+        print(f"A maior temperatura foi: {maior_temperatura:.2f}°C")
+        print(f"A temperatura média foi: {media:.2f}°C")
+    else:
+        print("Nenhuma temperatura foi informada.")
+
+if __name__ == "__main__":
+    calcular_estatisticas_temperaturas()
